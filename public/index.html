@@ -4,16 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startup One Pager</title>
-    <link rel="icon" type="image/jpeg" href="/vhpi-logo.jpg">
-    <link rel="apple-touch-icon" href="/vhpi-logo.jpg">
-    <link rel="stylesheet" href="/styles.css">
+    <script>
+      window.__APP_BASE_PATH__ = location.hostname.endsWith("github.io") ? "/vhp-one-pager/" : "/";
+      document.write(`<base href="${window.__APP_BASE_PATH__}">`);
+    </script>
+    <link rel="icon" type="image/jpeg" href="vhpi-logo.jpg">
+    <link rel="apple-touch-icon" href="vhpi-logo.jpg">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main class="sheet" id="sheet"></main>
 
-    <script src="/data.js"></script>
+    <script src="data.js"></script>
     <script>
-      const pathParts = location.pathname.split("/").filter(Boolean);
+      const basePath = window.__APP_BASE_PATH__ || "/";
+      const routePath = basePath !== "/" && location.pathname.startsWith(basePath)
+        ? location.pathname.slice(basePath.length)
+        : location.pathname;
+      const pathParts = routePath.split("/").filter(Boolean);
       const slug = pathParts[0] || "autocast";
       const isPrintRoute = pathParts[1] === "print";
       const startup = window.STARTUPS[slug] || window.STARTUPS["startup-name"];
@@ -99,8 +107,8 @@
 
       document.getElementById("sheet").innerHTML = `
         <nav class="mode-bar">
-          <a href="/${slug}" class="${isPrintRoute ? "" : "active"}">Online</a>
-          <a href="/${slug}/print" class="${isPrintRoute ? "active" : ""}">PDF</a>
+          <a href="${basePath}${slug}" class="${isPrintRoute ? "" : "active"}">Online</a>
+          <a href="${basePath}${slug}/print" class="${isPrintRoute ? "active" : ""}">PDF</a>
         </nav>
 
         <header class="hero">

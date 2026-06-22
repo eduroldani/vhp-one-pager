@@ -128,7 +128,7 @@ window.STARTUPS = {
       label: "Support Need",
       value: "300,000 EUR Investment & Research Partners"
     },
-    incubatorLogo: "/vhpi-logo.jpg"
+    incubatorLogo: "vhpi-logo.jpg"
   },
   "startup-name": {
     name: "Startup Name",
@@ -189,6 +189,6 @@ window.STARTUPS = {
       label: "Support Need",
       value: "Funding, pilots, and strategic partners"
     },
-    incubatorLogo: "/vhpi-logo.jpg"
+    incubatorLogo: "vhpi-logo.jpg"
   }
 };
