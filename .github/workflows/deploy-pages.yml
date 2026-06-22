@@ -29,7 +29,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Add SPA fallback
-        run: cp public/index.html public/404.html
+        run: |
+          cp public/index.html public/404.html
+          mkdir -p public/autocast/print public/startup-name/print
+          cp public/index.html public/autocast/index.html
+          cp public/index.html public/autocast/print/index.html
+          cp public/index.html public/startup-name/index.html
+          cp public/index.html public/startup-name/print/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
