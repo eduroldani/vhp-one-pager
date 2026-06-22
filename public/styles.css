@@ -168,6 +168,17 @@ h1 {
   font-weight: 800;
 }
 
+.section-icon svg,
+.support-icon svg {
+  width: 58%;
+  height: 58%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 p {
   margin: 0 0 8px;
 }
@@ -294,6 +305,11 @@ li {
   color: var(--primary-purple);
   font-size: 38px;
   font-weight: 800;
+}
+
+.support-icon svg {
+  width: 46px;
+  height: 46px;
 }
 
 .support span {
@@ -576,6 +592,11 @@ body.print-preview .support-icon {
   font-size: 11px;
 }
 
+body.print-preview .support-icon svg {
+  width: 9mm;
+  height: 9mm;
+}
+
 body.print-preview .support span {
   margin-bottom: 2px;
   font-size: 8px;
@@ -829,6 +850,11 @@ body.print-preview .incubator-logo {
     width: 14mm;
     height: 14mm;
     font-size: 11px;
+  }
+
+  .support-icon svg {
+    width: 9mm;
+    height: 9mm;
   }
 
   .support span {

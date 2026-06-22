@@ -15,7 +15,7 @@ window.STARTUPS = {
     sections: [
       {
         title: "Problem",
-        icon: "!",
+        icon: "problem",
         body: [
           "In Germany there are 9 mln diabetic patients. Up to 25% of them will develop foot ulcers in their lifetime. Direct costs of diabetic foot complications are comparable to costs of treating cancer.",
           "The method of treating foot ulcers, after antibiotics therapy, is Total Contact Cast (TCC). However, applying TCC is prolonged and it requires the creation of a new cast each time. Moreover, medical personnel often put on a ready-made walkers, which are removed by patients (less adherence) and the wound healing process is slow. It takes almost 6 months to treat one ulceration (the wound is not healing properly when you suffer from diabetes and neuropathy)."
@@ -23,7 +23,7 @@ window.STARTUPS = {
       },
       {
         title: "Solution",
-        icon: "OK",
+        icon: "solution",
         body: [
           "System AutoCast consists of:"
         ],
@@ -38,7 +38,7 @@ window.STARTUPS = {
       },
       {
         title: "Core Team",
-        icon: "T",
+        icon: "team",
         people: [
           ["Martyna Jakubowska", "CEO, R&D Project Manager", [
             "Innovation management and new product development",
@@ -57,7 +57,7 @@ window.STARTUPS = {
       },
       {
         title: "Market Opportunity",
-        icon: "M",
+        icon: "market",
         bullets: [
           "<strong>TAM 2024</strong> Foot ulcers treatment market worldwide: 7.52 bn EUR. CAGR 8,1%",
           "<strong>SAM 2021</strong> European foot ulcers treatment market: 1.45 bn EUR. German foot ulcers treatment market: 0.4 bn EUR.",
@@ -66,7 +66,7 @@ window.STARTUPS = {
       },
       {
         title: "Competitors",
-        icon: "C",
+        icon: "competitors",
         bullets: [
           "Vaprox VHT - Sanuwave, Söring (stationery ultrasound wave devices)",
           "Actics, Osentec - insoles (diabetic foot prevention)",
@@ -75,7 +75,7 @@ window.STARTUPS = {
       },
       {
         title: "Business Model",
-        icon: "$",
+        icon: "business",
         body: [
           "<strong>Target customer:</strong>"
         ],
@@ -91,7 +91,7 @@ window.STARTUPS = {
       },
       {
         title: "Key Milestones",
-        icon: "K",
+        icon: "milestones",
         groupedBullets: [
           ["Reached", [
             "Qualitative and quantitative research",
@@ -112,7 +112,7 @@ window.STARTUPS = {
       },
       {
         title: "Competitive Advantage",
-        icon: "A",
+        icon: "advantage",
         body: [
           "<strong>Value Proposition:</strong>"
         ],
@@ -147,18 +147,18 @@ window.STARTUPS = {
     sections: [
       {
         title: "Problem",
-        icon: "!",
+        icon: "problem",
         body: ["Describe the urgent customer pain, who has it, and why current alternatives are not enough."]
       },
       {
         title: "Solution",
-        icon: "OK",
+        icon: "solution",
         body: ["Describe the product in plain language and explain why it solves the problem better."],
         bullets: ["Core feature one", "Core feature two", "Core feature three"]
       },
       {
         title: "Core Team",
-        icon: "T",
+        icon: "team",
         people: [
           ["Founder One", "CEO"],
           ["Founder Two", "CTO"],
@@ -167,7 +167,7 @@ window.STARTUPS = {
       },
       {
         title: "Market Opportunity",
-        icon: "M",
+        icon: "market",
         kpis: [
           ["1.2bn EUR", "Total addressable market"],
           ["120m EUR", "Serviceable available market"],
@@ -176,12 +176,12 @@ window.STARTUPS = {
       },
       {
         title: "Business Model",
-        icon: "$",
+        icon: "business",
         body: ["Explain how the startup makes money, who pays, and the first scalable sales channel."]
       },
       {
         title: "Competitive Advantage",
-        icon: "A",
+        icon: "advantage",
         bullets: ["Unique insight", "Distribution edge", "Technical or operational moat"]
       }
     ],

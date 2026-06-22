@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startup One Pager</title>
+    <link rel="icon" type="image/jpeg" href="/vhpi-logo.jpg">
+    <link rel="apple-touch-icon" href="/vhpi-logo.jpg">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -19,6 +21,20 @@
       document.body.classList.add(isPrintRoute ? "print-preview" : "online-preview");
 
       const sectionSlug = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      const icons = {
+        facts: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>',
+        contact: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h4"/></svg>',
+        problem: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20h15a2 2 0 0 0 1.7-2.5L13.7 4.3a2 2 0 0 0-3.4 0Z"/></svg>',
+        solution: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11-5-5"/><path d="M12 3a9 9 0 1 0 9 9"/></svg>',
+        team: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
+        market: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/><path d="M15 7h5v5"/></svg>',
+        competitors: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10"/><path d="m14 4 3 3-3 3"/><path d="M17 17H7"/><path d="m10 20-3-3 3-3"/></svg>',
+        business: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>',
+        milestones: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h10"/><path d="M4 19h16"/><path d="m16 11 2 2 4-4"/></svg>',
+        advantage: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>',
+        support: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>'
+      };
+      const sectionIcon = (section) => icons[section.icon] || icons.facts;
 
       const textRows = (items) => items.map(([label, value]) => `
         <div class="fact-row">
@@ -69,7 +85,7 @@
       const sections = startup.sections.map((section) => `
         <section class="card section-${sectionSlug(section.title)}">
           <div class="section-heading">
-            <span class="section-icon">${section.icon}</span>
+            <span class="section-icon">${sectionIcon(section)}</span>
             <h2>${section.title}</h2>
           </div>
           ${paragraphs(section.body)}
@@ -99,14 +115,14 @@
         <section class="top-grid">
           <div class="info-card">
             <div class="section-heading compact">
-              <span class="section-icon">Q</span>
+              <span class="section-icon">${icons.facts}</span>
               <h2>Quick Facts</h2>
             </div>
             ${textRows(startup.quickFacts)}
           </div>
           <div class="info-card">
             <div class="section-heading compact">
-              <span class="section-icon">@</span>
+              <span class="section-icon">${icons.contact}</span>
               <h2>Contact</h2>
             </div>
             ${textRows(startup.contact)}
@@ -116,7 +132,7 @@
         <div class="content-grid">${sections}</div>
 
         <footer class="support">
-          <div class="support-icon">UP</div>
+          <div class="support-icon">${icons.support}</div>
           <div>
             <span>${startup.supportNeed.label}</span>
             <strong>${startup.supportNeed.value}</strong>
