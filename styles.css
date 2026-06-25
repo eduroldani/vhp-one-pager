@@ -747,7 +747,7 @@ body.print-preview .group > strong {
 
 body.print-preview .support {
   flex: 0 0 16mm;
-  grid-template-columns: 1fr 24mm;
+  grid-template-columns: 1fr 34mm;
   gap: 4mm;
   margin-top: 1.4mm;
   padding: 2.5mm 0 0;
@@ -775,8 +775,8 @@ body.print-preview .support strong {
 }
 
 body.print-preview .incubator-logo {
-  width: 22mm;
-  height: 12mm;
+  width: 34mm;
+  height: 15mm;
   object-fit: contain;
 }
 
@@ -1012,7 +1012,7 @@ body.print-preview .incubator-logo {
 
   .support {
     flex: 0 0 16mm;
-    grid-template-columns: 1fr 24mm;
+    grid-template-columns: 1fr 34mm;
     gap: 4mm;
     margin-top: 1.4mm;
     padding: 2.5mm 0 0;
@@ -1040,8 +1040,8 @@ body.print-preview .incubator-logo {
   }
 
   .incubator-logo {
-    width: 22mm;
-    height: 12mm;
+    width: 34mm;
+    height: 15mm;
     object-fit: contain;
   }
 }

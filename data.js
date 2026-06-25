@@ -106,7 +106,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "module-ai": {
     "name": "Module AI",
@@ -209,7 +209,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "symbio-flow": {
     "name": "Symbio Flow",
@@ -318,7 +318,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "sync-health": {
     "name": "Sync health",
@@ -427,7 +427,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "move-90": {
     "name": "Move 90",
@@ -536,7 +536,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "lebi-ai": {
     "name": "Lebi AI",
@@ -645,7 +645,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "kinu-health": {
     "name": "Kinu Health",
@@ -754,7 +754,7 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   },
   "ynone": {
     "name": "Ynone",
@@ -863,6 +863,6 @@ window.STARTUPS = {
       "label": "Support Need",
       "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    "incubatorLogo": "vhpi-logo.jpg"
+    "incubatorLogo": "vhp-logo-purple-cropped.jpg"
   }
 };

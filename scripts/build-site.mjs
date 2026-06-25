@@ -179,7 +179,7 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
       label: readField(fields, ["Support Need Label"]) || "Support Need",
       value: readField(fields, ["Support Needed", "Support Need"]) || ""
     },
-    incubatorLogo: readAttachmentUrl(fields, ["Incubator Logo"]) || "vhpi-logo.jpg"
+    incubatorLogo: readAttachmentUrl(fields, ["Incubator Logo"]) || "vhp-logo-purple-cropped.jpg"
   };
 }
 
@@ -359,6 +359,7 @@ async function writeStaticSite(targetDir, data) {
   await copyFile(join(publicDir, "styles.css"), join(targetDir, "styles.css"));
   await copyFile(join(publicDir, "data.js"), join(targetDir, "data.js"));
   await copyFile(join(publicDir, "vhpi-logo.jpg"), join(targetDir, "vhpi-logo.jpg"));
+  await copyFile(join(publicDir, "vhp-logo-purple-cropped.jpg"), join(targetDir, "vhp-logo-purple-cropped.jpg"));
 
   for (const slug of Object.keys(data)) routeSlugs.add(slug);
 
