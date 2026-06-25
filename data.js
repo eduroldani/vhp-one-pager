@@ -17,6 +17,10 @@ window.STARTUPS = {
       [
         "Email",
         "daria.koseniuk@helthea.de"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -57,9 +61,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -120,6 +125,10 @@ window.STARTUPS = {
       [
         "Email",
         "lourensvanderzee@proton.me"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -154,9 +163,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -217,6 +227,10 @@ window.STARTUPS = {
       [
         "Email",
         "kami.mainkar@symbioflow.ai"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -257,9 +271,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -320,6 +335,10 @@ window.STARTUPS = {
       [
         "Email",
         "ricki@syncd.health"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -360,9 +379,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -423,6 +443,10 @@ window.STARTUPS = {
       [
         "Email",
         "selmaayagoub@gmail.com"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -463,9 +487,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -526,6 +551,10 @@ window.STARTUPS = {
       [
         "Email",
         "ragnar@lebi.ai"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -566,9 +595,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -629,6 +659,10 @@ window.STARTUPS = {
       [
         "Email",
         "ayeshanazir2195@gmail.com"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -669,9 +703,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",
@@ -732,6 +767,10 @@ window.STARTUPS = {
       [
         "Email",
         "info@ynone.eu"
+      ],
+      [
+        "Website",
+        "www.startup.com"
       ]
     ],
     "sections": [
@@ -772,9 +811,10 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": [
+        "body": [
           "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Competitors",

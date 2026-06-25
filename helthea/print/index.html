@@ -45,14 +45,27 @@
       };
       const sectionIcon = (section) => icons[section.icon] || icons.facts;
 
+      const displayValue = (label, value) => {
+        const text = String(value || "");
+        const normalizedLabel = String(label || "").toLowerCase();
+        if (normalizedLabel.includes("email") && text.includes("@")) {
+          return `<a href="mailto:${text}">${text}</a>`;
+        }
+        if (normalizedLabel.includes("website")) {
+          const href = /^https?:\/\//i.test(text) ? text : `https://${text}`;
+          return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        }
+        return text;
+      };
+
       const textRows = (items) => items.map(([label, value]) => label ? `
         <div class="fact-row">
           <span>${label}</span>
-          <strong>${value}</strong>
+          <strong>${displayValue(label, value)}</strong>
         </div>
       ` : `
         <div class="fact-row fact-row-full">
-          <strong>${value}</strong>
+          <strong>${displayValue(label, value)}</strong>
         </div>
       `).join("");
 

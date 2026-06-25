@@ -94,6 +94,12 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
   const fallbackTeam = parsePeople(readField(fields, ["Core Team", "Team"]));
   const quickFacts = parseLabeledRows(readField(fields, ["Quick Facts"]));
   const contact = resolveContacts(readRawField(fields, ["Main Contact"]), contactsById);
+  const website = readField(fields, ["Website", "Web Site", "URL"]);
+  const contactRows = contact.length ? contact : compactRows([
+    ["Contact person", readField(fields, ["Contact person", "Contact Person"])],
+    ["Email", readField(fields, ["Email", "Contact"])]
+  ]);
+  if (website) contactRows.push(["Website", website]);
 
   return {
     slug,
@@ -105,11 +111,7 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
       ["Stage of Company / Product Stage", readField(fields, ["Stage of Company / Product Stage", "Stage"])],
       ["Team Size", readField(fields, ["Team Size"])]
     ]),
-    contact: contact.length ? contact : compactRows([
-      ["Contact person", readField(fields, ["Contact person", "Contact Person"])],
-      ["Email", readField(fields, ["Email", "Contact"])],
-      ["Website", readField(fields, ["Website"])]
-    ]),
+    contact: contactRows,
     sections: [
       {
         title: "Problem",
@@ -131,7 +133,8 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
       {
         title: "Market Opportunity",
         icon: "market",
-        bullets: splitList(readField(fields, ["Market Opportunity", "Market Oportunity", "Market", "Market Size"]))
+        body: splitParagraphs(readField(fields, ["Market Opportunity", "Market Oportunity", "Market", "Market Size"])),
+        bullets: splitList(readField(fields, ["Market Opportunity Bullets"]))
       },
       {
         title: "Competitors",
