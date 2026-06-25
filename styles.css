@@ -544,8 +544,8 @@ body.online-preview .support {
 
 body.print-preview {
   background: #EDEAF1;
-  font-size: 10.2px;
-  line-height: 1.24;
+  font-size: 11.4px;
+  line-height: 1.28;
 }
 
 body.print-preview .startup-sidebar {
@@ -605,7 +605,7 @@ body.print-preview .content-grid {
 }
 
 body.print-preview .top-grid {
-  flex: 0 0 21mm;
+  flex: 0 0 24mm;
   margin-bottom: 1.4mm;
 }
 
@@ -656,7 +656,7 @@ body.print-preview .section-competitive-advantage {
 
 body.print-preview .info-card,
 body.print-preview .card {
-  padding: 3.2mm;
+  padding: 4.4mm;
   border-radius: 0;
   border-color: #D8C8E8;
 }
@@ -668,20 +668,20 @@ body.print-preview .card {
 
 body.print-preview .section-heading {
   gap: 2mm;
-  margin-bottom: 1.5mm;
+  margin-bottom: 2mm;
 }
 
 body.print-preview .section-heading.compact {
-  margin-bottom: 1.5mm;
+  margin-bottom: 2mm;
 }
 
 body.print-preview .section-heading h2 {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 body.print-preview .section-icon {
-  width: 21px;
-  height: 21px;
+  width: 23px;
+  height: 23px;
   font-size: 7px;
 }
 
@@ -701,7 +701,7 @@ body.print-preview li {
 body.print-preview .fact-row {
   grid-template-columns: 34mm 1fr;
   gap: 2mm;
-  margin-bottom: 1.2mm;
+  margin-bottom: 1.5mm;
 }
 
 body.print-preview .people-list {
@@ -757,11 +757,11 @@ body.print-preview .support-icon svg {
 
 body.print-preview .support span {
   margin-bottom: 2px;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 body.print-preview .support strong {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 body.print-preview .incubator-logo {
@@ -781,8 +781,8 @@ body.print-preview .incubator-logo {
     height: 297mm;
     margin: 0;
     background: #FFFFFF;
-    font-size: 10.2px;
-    line-height: 1.24;
+    font-size: 11.4px;
+    line-height: 1.28;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -845,7 +845,7 @@ body.print-preview .incubator-logo {
   }
 
   .top-grid {
-    flex: 0 0 21mm;
+    flex: 0 0 24mm;
     margin-bottom: 1.4mm;
   }
 
@@ -902,7 +902,7 @@ body.print-preview .incubator-logo {
 
   .info-card,
   .card {
-    padding: 3.2mm;
+    padding: 4.4mm;
   }
 
   .card {
@@ -914,20 +914,20 @@ body.print-preview .incubator-logo {
 
   .section-heading {
     gap: 2mm;
-    margin-bottom: 1.5mm;
+    margin-bottom: 2mm;
   }
 
   .section-heading.compact {
-    margin-bottom: 1.5mm;
+    margin-bottom: 2mm;
   }
 
   .section-heading h2 {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .section-icon {
-    width: 21px;
-    height: 21px;
+    width: 23px;
+    height: 23px;
     font-size: 7px;
   }
 
@@ -947,7 +947,7 @@ body.print-preview .incubator-logo {
   .fact-row {
     grid-template-columns: 34mm 1fr;
     gap: 2mm;
-    margin-bottom: 1.2mm;
+    margin-bottom: 1.5mm;
   }
 
   .people-list {
@@ -1021,11 +1021,11 @@ body.print-preview .incubator-logo {
 
   .support span {
     margin-bottom: 2px;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .support strong {
-    font-size: 24px;
+    font-size: 25px;
   }
 
   .incubator-logo {
