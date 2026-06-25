@@ -777,6 +777,7 @@ body.print-preview .support strong {
 body.print-preview .incubator-logo {
   width: 22mm;
   height: 12mm;
+  object-fit: contain;
 }
 
 @page {
@@ -1041,5 +1042,6 @@ body.print-preview .incubator-logo {
   .incubator-logo {
     width: 22mm;
     height: 12mm;
+    object-fit: contain;
   }
 }
