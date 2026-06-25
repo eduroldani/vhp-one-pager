@@ -27,6 +27,7 @@
       const startup = window.STARTUPS[slug] || window.STARTUPS["startup-name"];
       document.title = `${startup.name} | Startup One Pager`;
       document.body.classList.add(isPrintRoute ? "print-preview" : "online-preview");
+      const startupEntries = Object.entries(window.STARTUPS).sort(([, a], [, b]) => a.name.localeCompare(b.name));
 
       const sectionSlug = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
       const icons = {
@@ -94,6 +95,13 @@
         </div>
       `).join("");
 
+      const startupNav = startupEntries.map(([entrySlug, entry]) => `
+        <a href="${basePath}${entrySlug}" class="${entrySlug === slug ? "active" : ""}">
+          <span>${entry.logoText || entry.name.slice(0, 2).toUpperCase()}</span>
+          <strong>${entry.name}</strong>
+        </a>
+      `).join("");
+
       const sections = startup.sections.map((section) => `
         <section class="card section-${sectionSlug(section.title)}">
           <div class="section-heading">
@@ -109,7 +117,7 @@
         </section>
       `).join("");
 
-      document.getElementById("sheet").innerHTML = `
+      const sheetContent = `
         <nav class="mode-bar">
           <a href="${basePath}${slug}" class="${isPrintRoute ? "" : "active"}">Online</a>
           <a href="${basePath}${slug}/print" class="${isPrintRoute ? "active" : ""}">PDF</a>
@@ -152,6 +160,20 @@
           <img class="incubator-logo" src="${startup.incubatorLogo}" alt="Vision Health Pioneers Incubator">
         </footer>
       `;
+
+      document.getElementById("sheet").innerHTML = sheetContent;
+
+      if (!isPrintRoute) {
+        document.body.insertAdjacentHTML("afterbegin", `
+          <aside class="startup-sidebar" aria-label="Startup navigation">
+            <div class="sidebar-brand">
+              <span>VHPI</span>
+              <strong>One Pagers</strong>
+            </div>
+            <nav>${startupNav}</nav>
+          </aside>
+        `);
+      }
     </script>
   </body>
 </html>

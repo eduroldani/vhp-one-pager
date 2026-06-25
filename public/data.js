@@ -101,7 +101,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -201,7 +201,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -307,7 +307,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -413,7 +413,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -519,7 +519,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -625,7 +625,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -731,7 +731,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -837,7 +837,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   }
