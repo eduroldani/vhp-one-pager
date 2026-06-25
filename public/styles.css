@@ -569,7 +569,7 @@ body.print-preview .sheet {
   height: 297mm;
   min-height: 0;
   padding: 6mm;
-  overflow: visible;
+  overflow: hidden;
 }
 
 body.print-preview .mode-bar {
@@ -805,7 +805,7 @@ body.print-preview .incubator-logo {
     min-height: 0;
     margin: 0;
     padding: 6mm;
-    overflow: visible;
+    overflow: hidden;
     border: 0;
     box-shadow: none;
     break-inside: avoid;
