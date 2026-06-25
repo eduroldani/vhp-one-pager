@@ -61,7 +61,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -161,7 +163,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -267,7 +271,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -373,7 +379,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -479,7 +487,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -585,7 +595,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -691,7 +703,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",
@@ -797,7 +811,9 @@ window.STARTUPS = {
       {
         "title": "Market Opportunity",
         "icon": "market",
-        "bullets": []
+        "bullets": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ]
       },
       {
         "title": "Competitors",

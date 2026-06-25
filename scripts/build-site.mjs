@@ -131,12 +131,12 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
       {
         title: "Market Opportunity",
         icon: "market",
-        bullets: splitList(readField(fields, ["Market Opportunity", "Market"]))
+        bullets: splitList(readField(fields, ["Market Opportunity", "Market Oportunity", "Market", "Market Size"]))
       },
       {
         title: "Competitors",
         icon: "competitors",
-        bullets: splitList(readField(fields, ["Competitors", "Competiros"]))
+        bullets: splitList(readField(fields, ["Competitors", "Competitor", "Competidor", "Competiros"]))
       },
       {
         title: "Business Model",

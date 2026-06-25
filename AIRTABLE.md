@@ -26,8 +26,8 @@ Recommended fields:
 - `Value Proposition` - long text
 - `Go-to-Market` - long text
 - `Core Team` - optional long text, one person per line using `Name | Role | bullet 1; bullet 2 | LinkedIn`
-- `Market Opportunity` - long text, one bullet per line
-- `Competiros` or `Competitors` - long text, one bullet per line
+- `Market Opportunity` or `Market Oportunity` - long text, one bullet per line
+- `Competitors` - long text, one bullet per line
 - `Business Model Intro` - optional long text
 - `Business Model` - long text
 - `Competitive Adventage` - long text
