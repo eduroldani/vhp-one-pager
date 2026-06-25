@@ -746,18 +746,18 @@ body.print-preview .group > strong {
 }
 
 body.print-preview .support {
-  flex: 0 0 19mm;
-  grid-template-columns: 18mm 1fr 24mm;
-  gap: 5mm;
+  flex: 0 0 16mm;
+  grid-template-columns: 1fr 24mm;
+  gap: 4mm;
   margin-top: 1.4mm;
-  padding: 3mm 5mm;
+  padding: 2.5mm 0 0;
   border-radius: 0;
+  border-top: 1px solid #D8C8E8;
+  background: #FFFFFF;
 }
 
 body.print-preview .support-icon {
-  width: 14mm;
-  height: 14mm;
-  font-size: 11px;
+  display: none;
 }
 
 body.print-preview .support-icon svg {
@@ -767,16 +767,16 @@ body.print-preview .support-icon svg {
 
 body.print-preview .support span {
   margin-bottom: 2px;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 body.print-preview .support strong {
-  font-size: 25px;
+  font-size: 19px;
 }
 
 body.print-preview .incubator-logo {
   width: 22mm;
-  height: 14mm;
+  height: 12mm;
 }
 
 @page {
@@ -1010,18 +1010,18 @@ body.print-preview .incubator-logo {
   }
 
   .support {
-    flex: 0 0 19mm;
-    grid-template-columns: 18mm 1fr 24mm;
-    gap: 5mm;
+    flex: 0 0 16mm;
+    grid-template-columns: 1fr 24mm;
+    gap: 4mm;
     margin-top: 1.4mm;
-    padding: 3mm 5mm;
+    padding: 2.5mm 0 0;
     border-radius: 0;
+    border-top: 1px solid #D8C8E8;
+    background: #FFFFFF;
   }
 
   .support-icon {
-    width: 14mm;
-    height: 14mm;
-    font-size: 11px;
+    display: none;
   }
 
   .support-icon svg {
@@ -1031,15 +1031,15 @@ body.print-preview .incubator-logo {
 
   .support span {
     margin-bottom: 2px;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .support strong {
-    font-size: 25px;
+    font-size: 19px;
   }
 
   .incubator-logo {
     width: 22mm;
-    height: 14mm;
+    height: 12mm;
   }
 }
