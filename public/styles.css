@@ -749,6 +749,7 @@ body.print-preview .support {
   flex: 0 0 16mm;
   grid-template-columns: 1fr 34mm;
   gap: 4mm;
+  align-items: end;
   margin-top: 1.4mm;
   padding: 2.5mm 0 0;
   border-radius: 0;
@@ -758,6 +759,10 @@ body.print-preview .support {
 
 body.print-preview .support-icon {
   display: none;
+}
+
+body.print-preview .support > div:not(.support-icon) {
+  align-self: start;
 }
 
 body.print-preview .support-icon svg {
@@ -775,6 +780,8 @@ body.print-preview .support strong {
 }
 
 body.print-preview .incubator-logo {
+  align-self: end;
+  justify-self: end;
   width: 34mm;
   height: 15mm;
   object-fit: contain;
@@ -1014,6 +1021,7 @@ body.print-preview .incubator-logo {
     flex: 0 0 16mm;
     grid-template-columns: 1fr 34mm;
     gap: 4mm;
+    align-items: end;
     margin-top: 1.4mm;
     padding: 2.5mm 0 0;
     border-radius: 0;
@@ -1023,6 +1031,10 @@ body.print-preview .incubator-logo {
 
   .support-icon {
     display: none;
+  }
+
+  .support > div:not(.support-icon) {
+    align-self: start;
   }
 
   .support-icon svg {
@@ -1040,6 +1052,8 @@ body.print-preview .incubator-logo {
   }
 
   .incubator-logo {
+    align-self: end;
+    justify-self: end;
     width: 34mm;
     height: 15mm;
     object-fit: contain;
