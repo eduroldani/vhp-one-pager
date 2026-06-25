@@ -59,11 +59,11 @@
 
       const people = (items = []) => items.length ? `
         <div class="people-list">
-          ${items.map(([name, role, details]) => `
+          ${items.map(([name, role, details, link]) => `
             <div class="person">
               <div class="avatar">${name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>
               <div>
-                <strong>${name}</strong>
+                ${link ? `<a class="person-link" href="${link}" target="_blank" rel="noopener noreferrer">${name}</a>` : `<strong>${name}</strong>`}
                 <span>${role}</span>
                 ${bullets(details)}
               </div>

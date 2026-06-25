@@ -229,6 +229,18 @@ li {
   display: block;
 }
 
+.person-link {
+  display: block;
+  color: var(--primary-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.person-link:hover {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
+
 .avatar {
   display: grid;
   width: 36px;

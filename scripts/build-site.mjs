@@ -25,7 +25,7 @@ async function loadStartups() {
   }
 
   const table = process.env.AIRTABLE_STARTUPS_TABLE || "Startups";
-  const records = await fetchAirtableRecords(table);
+  const records = await fetchAirtableRecords(table, { useView: true });
   const publishedRecords = records.filter((record) => {
     const fields = record.fields || {};
     const status = readField(fields, ["Status", "Publish Status"]);
@@ -37,21 +37,23 @@ async function loadStartups() {
     return fallbackStartups;
   }
 
+  const founderRecords = await fetchAirtableRecords(process.env.AIRTABLE_FOUNDERS_TABLE || "Alumni", { useView: false });
+  const foundersById = new Map(founderRecords.map((record) => [record.id, record.fields || {}]));
   const normalized = {};
   for (const record of publishedRecords) {
-    const startup = normalizeStartup(record.fields || {});
+    const startup = normalizeStartup(record.fields || {}, foundersById);
     normalized[startup.slug] = stripSlug(startup);
   }
 
   return normalized;
 }
 
-async function fetchAirtableRecords(table) {
+async function fetchAirtableRecords(table, options = {}) {
   const baseId = process.env.AIRTABLE_BASE_ID;
   const encodedTable = encodeURIComponent(table);
   const params = new URLSearchParams();
   params.set("pageSize", "100");
-  if (process.env.AIRTABLE_VIEW) {
+  if (options.useView && process.env.AIRTABLE_VIEW) {
     params.set("view", process.env.AIRTABLE_VIEW);
   }
 
@@ -80,15 +82,16 @@ async function fetchAirtableRecords(table) {
   return records;
 }
 
-function normalizeStartup(fields) {
-  const name = readField(fields, ["Startup Name", "Name"]) || "Startup Name";
+function normalizeStartup(fields, foundersById = new Map()) {
+  const name = readField(fields, ["Startup Name", "Startup Name (from Founders)", "Name"]) || "Startup Name";
   const slug = slugify(readField(fields, ["Slug"]) || name);
-  const team = parsePeople(readField(fields, ["Core Team", "Team"]));
+  const team = resolveFounders(readRawField(fields, ["Founders"]), foundersById);
+  const fallbackTeam = parsePeople(readField(fields, ["Core Team", "Team"]));
 
   return {
     slug,
     name,
-    tagline: readField(fields, ["Tagline", "One-line Description"]) || "",
+    tagline: readField(fields, ["Tagline", "One-line Description", "Description"]) || "",
     logoText: readField(fields, ["Logo Text"]) || initials(name),
     quickFacts: compactRows([
       ["Founding Date", readField(fields, ["Founding Date"])],
@@ -97,7 +100,7 @@ function normalizeStartup(fields) {
     ]),
     contact: compactRows([
       ["Contact person", readField(fields, ["Contact person", "Contact Person"])],
-      ["Email", readField(fields, ["Email"])],
+      ["Email", readField(fields, ["Email", "Contact"])],
       ["Website", readField(fields, ["Website"])]
     ]),
     sections: [
@@ -116,7 +119,7 @@ function normalizeStartup(fields) {
       {
         title: "Core Team",
         icon: "team",
-        people: team
+        people: team.length ? team : fallbackTeam
       },
       {
         title: "Market Opportunity",
@@ -126,28 +129,34 @@ function normalizeStartup(fields) {
       {
         title: "Competitors",
         icon: "competitors",
-        bullets: splitList(readField(fields, ["Competitors"]))
+        bullets: splitList(readField(fields, ["Competitors", "Competiros"]))
       },
       {
         title: "Business Model",
         icon: "business",
         body: splitParagraphs(readField(fields, ["Business Model Intro"])),
-        bullets: splitList(readField(fields, ["Target Customers", "Business Model Bullets"])),
-        afterBody: splitParagraphs(readField(fields, ["Business Model"]))
+        bullets: splitList(readField(fields, ["Target Customers", "Target Customer", "Business Model Bullets"])),
+        afterBody: [
+          ...splitParagraphs(readField(fields, ["Business Model"])),
+          ...withLabel("Go-to-Market", readField(fields, ["Go-to-Market", "Go To Market"]))
+        ]
       },
       {
         title: "Key Milestones",
         icon: "milestones",
         groupedBullets: [
-          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached"]))],
+          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached", "Key Milestones"]))],
           ["Planned", splitList(readField(fields, ["Milestones Planned", "Planned"]))]
         ]
       },
       {
         title: "Competitive Advantage",
         icon: "advantage",
-        body: splitParagraphs(readField(fields, ["Competitive Advantage Intro", "Value Proposition Intro"])),
-        bullets: splitList(readField(fields, ["Competitive Advantage", "Value Proposition"]))
+        body: [
+          ...splitParagraphs(readField(fields, ["Competitive Advantage Intro", "Value Proposition Intro"])),
+          ...withLabel("Tackling", readField(fields, ["Tackling"]))
+        ],
+        bullets: splitList(readField(fields, ["Competitive Advantage", "Competitive Adventage", "Value Proposition"]))
       }
     ],
     supportNeed: {
@@ -160,10 +169,45 @@ function normalizeStartup(fields) {
 
 function readField(fields, names) {
   for (const name of names) {
+    const value = readRawField(fields, [name]);
+    if (value !== undefined && value !== null && value !== "") return normalizeFieldValue(value);
+  }
+  return "";
+}
+
+function readRawField(fields, names) {
+  for (const name of names) {
     const value = fields[name];
     if (value !== undefined && value !== null && value !== "") return value;
   }
   return "";
+}
+
+function normalizeFieldValue(value) {
+  if (!Array.isArray(value)) return value;
+  if (value[0]?.url) return value;
+  if (value.every((item) => typeof item === "string" || typeof item === "number")) {
+    return [...new Set(value.map(String))].join(", ");
+  }
+  if (value.every((item) => item && typeof item === "object" && "name" in item)) {
+    return value.map((item) => item.name).join(", ");
+  }
+  return value;
+}
+
+function resolveFounders(value, foundersById) {
+  if (!Array.isArray(value)) return [];
+
+  return value
+    .map((id) => {
+      const fields = foundersById.get(id);
+      if (!fields) return null;
+      const name = readField(fields, ["Name"]);
+      if (!name) return null;
+      const linkedin = readField(fields, ["LinkedIn", "Linkedin", "Linkedin Profile"]);
+      return [name, "Founder", [], linkedin];
+    })
+    .filter(Boolean);
 }
 
 function readAttachmentUrl(fields, names) {
@@ -196,9 +240,16 @@ function parsePeople(value) {
     .map((line) => line.trim())
     .filter(Boolean)
     .map((line) => {
-      const [name = "", role = "", details = ""] = line.split("|").map((part) => part.trim());
-      return [name, role, splitList(details)];
+      const [name = "", role = "", details = "", link = ""] = line.split("|").map((part) => part.trim());
+      return [name, role, splitList(details), link];
     });
+}
+
+function withLabel(label, value) {
+  const paragraphs = splitParagraphs(value);
+  if (!paragraphs.length) return [];
+  const [first, ...rest] = paragraphs;
+  return [`<strong>${label}:</strong> ${first}`, ...rest];
 }
 
 function compactRows(rows) {
