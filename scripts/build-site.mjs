@@ -141,12 +141,13 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
       {
         title: "Business Model",
         icon: "business",
-        body: splitParagraphs(readField(fields, ["Business Model Intro"])),
-        bullets: splitList(readField(fields, ["Target Customers", "Target Customer", "Business Model Bullets"])),
-        afterBody: [
+        body: [
+          ...splitParagraphs(readField(fields, ["Business Model Intro"])),
+          ...withLabel("Target customer", readField(fields, ["Target Customers", "Target Customer"])),
           ...splitParagraphs(readField(fields, ["Business Model"])),
           ...withLabel("Go-to-Market", readField(fields, ["Go-to-Market", "Go To Market"]))
-        ]
+        ],
+        bullets: splitList(readField(fields, ["Business Model Bullets"]))
       },
       {
         title: "Key Milestones",
@@ -162,9 +163,12 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
         icon: "advantage",
         body: [
           ...splitParagraphs(readField(fields, ["Competitive Advantage Intro", "Value Proposition Intro"])),
+          ...withLabel("Competitive advantage", readField(fields, ["Competitive Advantage", "Competitive Adventage"])),
+          ...withLabel("Value proposition", readField(fields, ["Value Proposition"])),
           ...withLabel("Tackling", readField(fields, ["Tackling"]))
         ],
-        bullets: splitList(readField(fields, ["Competitive Advantage", "Competitive Adventage", "Value Proposition"]))
+        bullets: splitList(readField(fields, ["Competitive Advantage Bullets"])
+          || readField(fields, ["Value Proposition Bullets"]))
       }
     ],
     supportNeed: {

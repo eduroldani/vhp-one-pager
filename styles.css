@@ -615,10 +615,10 @@ body.print-preview .content-grid {
   grid-template-areas:
     "problem solution"
     "team market"
-    "team business"
+    "competitors business"
     "competitors business"
     "milestones advantage";
-  grid-template-rows: 45mm 40mm 22mm 28mm 60mm;
+  grid-template-rows: 45mm 34mm 26mm 32mm 58mm;
   align-items: stretch;
 }
 
@@ -855,10 +855,10 @@ body.print-preview .incubator-logo {
     grid-template-areas:
       "problem solution"
       "team market"
-      "team business"
+      "competitors business"
       "competitors business"
       "milestones advantage";
-    grid-template-rows: 45mm 40mm 22mm 28mm 60mm;
+    grid-template-rows: 45mm 34mm 26mm 32mm 58mm;
     align-items: stretch;
   }
 

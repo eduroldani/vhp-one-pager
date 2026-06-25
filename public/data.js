@@ -71,14 +71,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Women aged 35 to 55 in Germany experiencing recurring stress."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Women aged 35 to 55 in Germany experiencing recurring stress.",
           "Hybrid B2C + B2B model with paid resilience programs and corporate workshops.",
           "<strong>Go-to-Market:</strong> Validate through workshops and user research before expanding through employers, insurers, and training providers."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -91,10 +89,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Women focused, psychologist supported, behavior change approach rather than passive wellness content."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Women focused, psychologist supported, behavior change approach rather than passive wellness content.",
+          "<strong>Value proposition:</strong> Preventive, evidence based mental health support designed specifically for women's biological and social realities."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -169,14 +168,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Digital health and mental health platforms across Europe."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Digital health and mental health platforms across Europe.",
           "Paid pilots followed by annual SaaS licenses and future enterprise contracts.",
           "<strong>Go-to-Market:</strong> Founder led outreach targeting German mental health platforms, supported by industry events and advisory introductions."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -189,10 +186,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "EU native compliance, ISO 27001, GDPR, EU AI Act readiness, validated with 1,500+ users."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> EU native compliance, ISO 27001, GDPR, EU AI Act readiness, validated with 1,500+ users.",
+          "<strong>Value proposition:</strong> Enables companies to launch branded healthcare AI much faster while reducing development costs by over €350k."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -273,14 +271,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Emergency departments, hospitals, medical directors, and hospital administrators."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Emergency departments, hospitals, medical directors, and hospital administrators.",
           "Hardware plus annual SaaS subscription with implementation and integration services.",
           "<strong>Go-to-Market:</strong> Pilot with leading hospitals before expanding across Germany and the DACH region through hospital groups and IT partners."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -293,10 +289,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Only platform combining voice AI, contactless vitals, AI reasoning, and hospital workflow integration in one product."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Only platform combining voice AI, contactless vitals, AI reasoning, and hospital workflow integration in one product.",
+          "<strong>Value proposition:</strong> Reduces triage time, improves patient safety, lowers workload, and standardizes triage decisions."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -377,14 +374,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Patients waiting for therapy, therapists, and German statutory health insurers."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Patients waiting for therapy, therapists, and German statutory health insurers.",
           "Freemium model with subscriptions, DiGA reimbursement, and insurer contracts.",
           "<strong>Go-to-Market:</strong> Launch with a free navigation platform, then introduce the AI companion and pursue DiGA reimbursement and insurer partnerships."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -397,10 +392,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Voice first interface, therapist briefing, German healthcare integration, and strong regulatory positioning."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Voice first interface, therapist briefing, German healthcare integration, and strong regulatory positioning.",
+          "<strong>Value proposition:</strong> Supports patients during the waiting period while reducing therapist administrative work and improving the first therapy session."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -481,14 +477,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Physiotherapy clinics, physiotherapists, rehabilitation patients, and insurers."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Physiotherapy clinics, physiotherapists, rehabilitation patients, and insurers.",
           "Clinic SaaS subscriptions with future insurer funded rehabilitation programs.",
           "<strong>Go-to-Market:</strong> Validate with clinics and pilot partners before expanding through insurers and reimbursement pathways."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -501,10 +495,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Closed loop rehabilitation combining AI planning, movement tracking, and therapist oversight."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Closed loop rehabilitation combining AI planning, movement tracking, and therapist oversight.",
+          "<strong>Value proposition:</strong> Improves rehabilitation adherence, therapist productivity, and patient recovery by connecting home rehabilitation with clinical care."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -585,14 +580,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "GP practices, outpatient clinics, dentists, and specialist practices in Germany and the Netherlands."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> GP practices, outpatient clinics, dentists, and specialist practices in Germany and the Netherlands.",
           "Subscription combined with usage based pricing and premium enterprise features.",
           "<strong>Go-to-Market:</strong> Develop with design partners, validate through outreach and landing pages, then scale with inbound sales."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -605,10 +598,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Modern LLM based voice stack with deep healthcare workflow integration."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Modern LLM based voice stack with deep healthcare workflow integration.",
+          "<strong>Value proposition:</strong> Automates 60 to 80% of routine calls, improving patient access while freeing staff for patient care."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -689,14 +683,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Autoimmune patients, endocrinologists, clinics, laboratories, and insurers."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Autoimmune patients, endocrinologists, clinics, laboratories, and insurers.",
           "Freemium subscriptions with future B2B licensing and pharmaceutical research insights.",
           "<strong>Go-to-Market:</strong> Freemium launch through autoimmune communities, then expand through clinics and insurer partnerships."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -709,10 +701,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "OCR digitization, biomarker tracking, predictive analytics, and clinician ready reports."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> OCR digitization, biomarker tracking, predictive analytics, and clinician ready reports.",
+          "<strong>Value proposition:</strong> Gives patients better understanding of their health while providing clinicians with structured, longitudinal data before appointments."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
@@ -793,14 +786,12 @@ window.STARTUPS = {
       {
         "title": "Business Model",
         "icon": "business",
-        "body": [],
-        "bullets": [
-          "Lymphedema patients, specialist clinics, therapy providers, telemedicine partners, and health insurers."
-        ],
-        "afterBody": [
+        "body": [
+          "<strong>Target customer:</strong> Lymphedema patients, specialist clinics, therapy providers, telemedicine partners, and health insurers.",
           "Subscription platform for clinics and healthcare professionals with future reimbursement based patient access.",
           "<strong>Go-to-Market:</strong> B2B2C strategy starting with specialist clinics and pilot partner Villa Sana, followed by patient communities, insurer pilots, and MDR Class IIa certification."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Key Milestones",
@@ -813,10 +804,11 @@ window.STARTUPS = {
       {
         "title": "Competitive Advantage",
         "icon": "advantage",
-        "body": [],
-        "bullets": [
-          "Strong founder market fit, trusted relationships with leading clinics, in house engineering team, multilingual support, and compliance first AI."
-        ]
+        "body": [
+          "<strong>Competitive advantage:</strong> Strong founder market fit, trusted relationships with leading clinics, in house engineering team, multilingual support, and compliance first AI.",
+          "<strong>Value proposition:</strong> Creates continuous, structured care between appointments, improving patient self management while providing clinicians with reliable longitudinal therapy data."
+        ],
+        "bullets": []
       }
     ],
     "supportNeed": {
