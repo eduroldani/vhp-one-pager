@@ -227,9 +227,7 @@ function resolveContacts(value, contactsById) {
     return compactRows([
       ["Contact person", readField(fields, ["Name"])],
       ["Role", readField(fields, ["Role"])],
-      ["Email", readField(fields, ["Email"])],
-      ["Phone", readField(fields, ["Phone"])],
-      ["LinkedIn", readField(fields, ["Linkedin", "LinkedIn", "Linkedin Profile"])]
+      ["Email", readField(fields, ["Email"])]
     ]);
   });
 }

@@ -17,10 +17,6 @@ window.STARTUPS = {
       [
         "Email",
         "daria.koseniuk@helthea.de"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/daria-koseniuk/"
       ]
     ],
     "sections": [
@@ -125,10 +121,6 @@ window.STARTUPS = {
       [
         "Email",
         "lourensvanderzee@proton.me"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/lourens-van-der-zee/"
       ]
     ],
     "sections": [
@@ -227,10 +219,6 @@ window.STARTUPS = {
       [
         "Email",
         "kami.mainkar@symbioflow.ai"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/kami-mainkar-25b6756/"
       ]
     ],
     "sections": [
@@ -335,10 +323,6 @@ window.STARTUPS = {
       [
         "Email",
         "ricki@syncd.health"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/ricki-walter/"
       ]
     ],
     "sections": [
@@ -443,10 +427,6 @@ window.STARTUPS = {
       [
         "Email",
         "selmaayagoub@gmail.com"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/selmayagoub/"
       ]
     ],
     "sections": [
@@ -551,10 +531,6 @@ window.STARTUPS = {
       [
         "Email",
         "ragnar@lebi.ai"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/ragnarjongen/"
       ]
     ],
     "sections": [
@@ -659,10 +635,6 @@ window.STARTUPS = {
       [
         "Email",
         "ayeshanazir2195@gmail.com"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/ayesha-nazir-18104391/"
       ]
     ],
     "sections": [
@@ -767,10 +739,6 @@ window.STARTUPS = {
       [
         "Email",
         "info@ynone.eu"
-      ],
-      [
-        "LinkedIn",
-        "https://www.linkedin.com/in/mara-sorrentino-486b81105/"
       ]
     ],
     "sections": [
