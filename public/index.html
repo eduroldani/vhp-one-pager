@@ -44,9 +44,13 @@
       };
       const sectionIcon = (section) => icons[section.icon] || icons.facts;
 
-      const textRows = (items) => items.map(([label, value]) => `
+      const textRows = (items) => items.map(([label, value]) => label ? `
         <div class="fact-row">
           <span>${label}</span>
+          <strong>${value}</strong>
+        </div>
+      ` : `
+        <div class="fact-row fact-row-full">
           <strong>${value}</strong>
         </div>
       `).join("");

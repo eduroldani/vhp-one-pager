@@ -13,10 +13,12 @@ Recommended fields:
 - `Founders` - linked records to `Alumni`
 - `Startup Name (from Founders)` - lookup, or `Startup Name`
 - `Tagline`
+- `Quick Facts` - short text, one fact per line. Use `Label: value` when useful.
 - `Founding Date`
 - `Stage of Company / Product Stage`
 - `Team Size`
 - `Contact` - email
+- `Main Contact` - linked record to `Contact`
 - `Website`
 - `Problem` - long text
 - `Solution` - long text
@@ -36,6 +38,7 @@ Recommended fields:
 - `Competitive Advantage Intro` - optional long text
 - `Competitive Advantage` - long text, one bullet per line
 - `Support Need`
+- `Support Needed`
 - `Support Need Label` - optional
 - `Logo Text` - optional, e.g. `AC`
 - `Incubator Logo` - optional attachment or public URL
@@ -50,6 +53,20 @@ Required fields:
 - `LinkedIn`
 
 The `Founders` field in `Startup Description` should link to records in `Alumni`. Founder names become clickable LinkedIn links in the online page.
+
+## Contact Table
+
+Create or use a table called `Contact`.
+
+Recommended fields:
+
+- `Name`
+- `Role`
+- `Email`
+- `Phone`
+- `Linkedin`
+
+The `Main Contact` field in `Startup Description` should link to records in `Contact`.
 
 Only records with empty `Status`, `Ready`, `Published`, or `Live` are included in the build.
 
@@ -71,6 +88,7 @@ Add these repository secrets in GitHub:
 - `AIRTABLE_BASE_ID`
 - `AIRTABLE_STARTUPS_TABLE`
 - `AIRTABLE_FOUNDERS_TABLE`
+- `AIRTABLE_CONTACTS_TABLE`
 - `AIRTABLE_VIEW`
 
 Then every push to `main` rebuilds the static pages from Airtable.

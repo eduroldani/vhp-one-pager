@@ -199,6 +199,10 @@ li {
   margin-bottom: 8px;
 }
 
+.fact-row-full {
+  display: block;
+}
+
 .fact-row span,
 .person span,
 .kpi span,
@@ -402,8 +406,8 @@ body.online-preview .support {
 
 body.print-preview {
   background: #EDEAF1;
-  font-size: 8.7px;
-  line-height: 1.18;
+  font-size: 9.1px;
+  line-height: 1.2;
 }
 
 body.print-preview .sheet {
@@ -530,7 +534,7 @@ body.print-preview .section-heading.compact {
 }
 
 body.print-preview .section-heading h2 {
-  font-size: 13.5px;
+  font-size: 14px;
 }
 
 body.print-preview .section-icon {
@@ -615,7 +619,7 @@ body.print-preview .support span {
 }
 
 body.print-preview .support strong {
-  font-size: 21px;
+  font-size: 22px;
 }
 
 body.print-preview .incubator-logo {
@@ -635,8 +639,8 @@ body.print-preview .incubator-logo {
     height: 297mm;
     margin: 0;
     background: #FFFFFF;
-    font-size: 8.7px;
-    line-height: 1.18;
+    font-size: 9.1px;
+    line-height: 1.2;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -772,7 +776,7 @@ body.print-preview .incubator-logo {
   }
 
   .section-heading h2 {
-    font-size: 13.5px;
+    font-size: 14px;
   }
 
   .section-icon {
@@ -875,7 +879,7 @@ body.print-preview .incubator-logo {
   }
 
   .support strong {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .incubator-logo {

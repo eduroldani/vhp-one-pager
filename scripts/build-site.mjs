@@ -39,9 +39,14 @@ async function loadStartups() {
 
   const founderRecords = await fetchAirtableRecords(process.env.AIRTABLE_FOUNDERS_TABLE || "Alumni", { useView: false });
   const foundersById = new Map(founderRecords.map((record) => [record.id, record.fields || {}]));
+  const contactRecords = await fetchAirtableRecords(process.env.AIRTABLE_CONTACTS_TABLE || "Contact", { useView: false });
+  const contactsById = new Map([
+    ...contactRecords.map((record) => [record.id, record.fields || {}]),
+    ...founderRecords.map((record) => [record.id, record.fields || {}])
+  ]);
   const normalized = {};
   for (const record of publishedRecords) {
-    const startup = normalizeStartup(record.fields || {}, foundersById);
+    const startup = normalizeStartup(record.fields || {}, foundersById, contactsById);
     normalized[startup.slug] = stripSlug(startup);
   }
 
@@ -82,23 +87,25 @@ async function fetchAirtableRecords(table, options = {}) {
   return records;
 }
 
-function normalizeStartup(fields, foundersById = new Map()) {
+function normalizeStartup(fields, foundersById = new Map(), contactsById = new Map()) {
   const name = readField(fields, ["Startup Name", "Startup Name (from Founders)", "Name"]) || "Startup Name";
   const slug = slugify(readField(fields, ["Slug"]) || name);
   const team = resolveFounders(readRawField(fields, ["Founders"]), foundersById);
   const fallbackTeam = parsePeople(readField(fields, ["Core Team", "Team"]));
+  const quickFacts = parseLabeledRows(readField(fields, ["Quick Facts"]));
+  const contact = resolveContacts(readRawField(fields, ["Main Contact"]), contactsById);
 
   return {
     slug,
     name,
     tagline: readField(fields, ["Tagline", "One-line Description", "Description"]) || "",
     logoText: readField(fields, ["Logo Text"]) || initials(name),
-    quickFacts: compactRows([
+    quickFacts: quickFacts.length ? quickFacts : compactRows([
       ["Founding Date", readField(fields, ["Founding Date"])],
       ["Stage of Company / Product Stage", readField(fields, ["Stage of Company / Product Stage", "Stage"])],
       ["Team Size", readField(fields, ["Team Size"])]
     ]),
-    contact: compactRows([
+    contact: contact.length ? contact : compactRows([
       ["Contact person", readField(fields, ["Contact person", "Contact Person"])],
       ["Email", readField(fields, ["Email", "Contact"])],
       ["Website", readField(fields, ["Website"])]
@@ -144,8 +151,9 @@ function normalizeStartup(fields, foundersById = new Map()) {
       {
         title: "Key Milestones",
         icon: "milestones",
-        groupedBullets: [
-          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached", "Key Milestones"]))],
+        body: splitParagraphs(readField(fields, ["Key Milestones"])),
+        groupedBullets: readField(fields, ["Key Milestones"]) ? [] : [
+          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached"]))],
           ["Planned", splitList(readField(fields, ["Milestones Planned", "Planned"]))]
         ]
       },
@@ -161,7 +169,7 @@ function normalizeStartup(fields, foundersById = new Map()) {
     ],
     supportNeed: {
       label: readField(fields, ["Support Need Label"]) || "Support Need",
-      value: readField(fields, ["Support Need"]) || ""
+      value: readField(fields, ["Support Needed", "Support Need"]) || ""
     },
     incubatorLogo: readAttachmentUrl(fields, ["Incubator Logo"]) || "vhpi-logo.jpg"
   };
@@ -210,6 +218,22 @@ function resolveFounders(value, foundersById) {
     .filter(Boolean);
 }
 
+function resolveContacts(value, contactsById) {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((id) => {
+    const fields = contactsById.get(id);
+    if (!fields) return [];
+    return compactRows([
+      ["Contact person", readField(fields, ["Name"])],
+      ["Role", readField(fields, ["Role"])],
+      ["Email", readField(fields, ["Email"])],
+      ["Phone", readField(fields, ["Phone"])],
+      ["LinkedIn", readField(fields, ["Linkedin", "LinkedIn", "Linkedin Profile"])]
+    ]);
+  });
+}
+
 function readAttachmentUrl(fields, names) {
   const value = readField(fields, names);
   if (Array.isArray(value) && value[0]?.url) return value[0].url;
@@ -230,6 +254,14 @@ function splitList(value) {
     .split(/\n|;/)
     .map((item) => item.replace(/^[-*•]\s*/, "").trim())
     .filter(Boolean);
+}
+
+function parseLabeledRows(value) {
+  return splitList(value).map((line) => {
+    const match = line.match(/^([^:–-]{2,40})[:–-]\s*(.+)$/);
+    if (match) return [match[1].trim(), match[2].trim()];
+    return ["", line];
+  });
 }
 
 function parsePeople(value) {

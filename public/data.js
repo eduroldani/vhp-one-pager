@@ -3,11 +3,24 @@ window.STARTUPS = {
     "name": "Helthea",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "H",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Daria Koseniuk"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "daria.koseniuk@helthea.de"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/daria-koseniuk/"
       ]
     ],
     "sections": [
@@ -72,18 +85,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -96,7 +101,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -104,11 +109,24 @@ window.STARTUPS = {
     "name": "Module AI",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "MA",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Lourens van der Zee"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "lourensvanderzee@proton.me"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/lourens-van-der-zee/"
       ]
     ],
     "sections": [
@@ -167,18 +185,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -191,7 +201,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -199,11 +209,24 @@ window.STARTUPS = {
     "name": "Symbio Flow",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "SF",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Kami Mainkar"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "kami.mainkar@symbioflow.ai"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/kami-mainkar-25b6756/"
       ]
     ],
     "sections": [
@@ -268,18 +291,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -292,7 +307,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -300,11 +315,24 @@ window.STARTUPS = {
     "name": "Sync health",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "SH",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Ricki Walter"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "ricki@syncd.health"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/ricki-walter/"
       ]
     ],
     "sections": [
@@ -369,18 +397,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -393,7 +413,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -401,11 +421,24 @@ window.STARTUPS = {
     "name": "Move 90",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "M9",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Selma Yagoub"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "selmaayagoub@gmail.com"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/selmayagoub/"
       ]
     ],
     "sections": [
@@ -470,18 +503,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -494,7 +519,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -502,11 +527,24 @@ window.STARTUPS = {
     "name": "Lebi AI",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "LA",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Ragnar Jongen"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "ragnar@lebi.ai"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/ragnarjongen/"
       ]
     ],
     "sections": [
@@ -571,18 +609,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -595,7 +625,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -603,11 +633,24 @@ window.STARTUPS = {
     "name": "Kinu Health",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "KH",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Ayesha Nazir"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "ayeshanazir2195@gmail.com"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/ayesha-nazir-18104391/"
       ]
     ],
     "sections": [
@@ -672,18 +715,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -696,7 +731,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   },
@@ -704,11 +739,24 @@ window.STARTUPS = {
     "name": "Ynone",
     "tagline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "logoText": "Y",
-    "quickFacts": [],
+    "quickFacts": [
+      [
+        "",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ],
     "contact": [
       [
+        "Contact person",
+        "Luisa Maria Sorrentino"
+      ],
+      [
         "Email",
-        "email@gmail.com"
+        "info@ynone.eu"
+      ],
+      [
+        "LinkedIn",
+        "https://www.linkedin.com/in/mara-sorrentino-486b81105/"
       ]
     ],
     "sections": [
@@ -773,18 +821,10 @@ window.STARTUPS = {
       {
         "title": "Key Milestones",
         "icon": "milestones",
-        "groupedBullets": [
-          [
-            "Reached",
-            [
-              "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
-            ]
-          ],
-          [
-            "Planned",
-            []
-          ]
-        ]
+        "body": [
+          "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
+        ],
+        "groupedBullets": []
       },
       {
         "title": "Competitive Advantage",
@@ -797,7 +837,7 @@ window.STARTUPS = {
     ],
     "supportNeed": {
       "label": "Support Need",
-      "value": ""
+      "value": "Etiam pellentesque, leo nec venenatis consectetur, purus velit imperdiet nunc, sed ultricies justo sem quis nunc. In tristique condimentum nisi et convallis. Sed at posuere nisi, non suscipit sem. Praesent consectetur facilisis tortor sed laoreet."
     },
     "incubatorLogo": "vhpi-logo.jpg"
   }
