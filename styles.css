@@ -781,14 +781,14 @@ body.print-preview .incubator-logo {
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 4mm;
 }
 
 @media print {
   html,
   body {
-    width: 210mm;
-    height: 297mm;
+    width: 202mm;
+    height: 289mm;
     margin: 0;
     background: #FFFFFF;
     font-size: 11.4px;
@@ -800,8 +800,8 @@ body.print-preview .incubator-logo {
   .sheet {
     display: flex;
     flex-direction: column;
-    width: 210mm;
-    height: 297mm;
+    width: 202mm;
+    height: 289mm;
     min-height: 0;
     margin: 0;
     padding: 6mm;
