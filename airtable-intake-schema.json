@@ -1,0 +1,61 @@
+{
+  "fields": {
+    "Startup Name": {
+      "min": 2,
+      "max": 35
+    },
+    "Tagline": {
+      "min": 40,
+      "max": 120
+    },
+    "Problem": {
+      "min": 450,
+      "max": 750
+    },
+    "Solution Intro": {
+      "min": 20,
+      "max": 120
+    },
+    "Solution Bullets": {
+      "minItems": 2,
+      "maxItems": 4
+    },
+    "Solution After": {
+      "min": 180,
+      "max": 420
+    },
+    "Core Team": {
+      "format": "Name | Role | bullet 1; bullet 2",
+      "minItems": 1,
+      "maxItems": 5
+    },
+    "Market Opportunity": {
+      "minItems": 2,
+      "maxItems": 4
+    },
+    "Competitors": {
+      "minItems": 2,
+      "maxItems": 4
+    },
+    "Business Model": {
+      "min": 300,
+      "max": 600
+    },
+    "Milestones Reached": {
+      "minItems": 3,
+      "maxItems": 7
+    },
+    "Milestones Planned": {
+      "minItems": 2,
+      "maxItems": 5
+    },
+    "Competitive Advantage": {
+      "minItems": 3,
+      "maxItems": 5
+    },
+    "Support Need": {
+      "min": 20,
+      "max": 90
+    }
+  }
+}

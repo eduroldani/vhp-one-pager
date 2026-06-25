@@ -1,0 +1,309 @@
+import { mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import vm from "node:vm";
+
+const rootDir = process.cwd();
+const publicDir = join(rootDir, "public");
+const distDir = join(rootDir, "dist");
+const routeSlugs = new Set(["autocast", "startup-name"]);
+
+loadEnvFile(".env");
+loadEnvFile(".env.local");
+
+const fallbackStartups = await readCurrentStartups();
+const startups = await loadStartups();
+await writeDataFile(startups);
+await syncRootStaticFiles(startups);
+await syncDistFiles(startups);
+await writeIntakeSchema();
+
+async function loadStartups() {
+  if (!process.env.AIRTABLE_TOKEN || !process.env.AIRTABLE_BASE_ID) {
+    console.log("Airtable credentials not found. Building with local fallback data.");
+    return fallbackStartups;
+  }
+
+  const table = process.env.AIRTABLE_STARTUPS_TABLE || "Startups";
+  const records = await fetchAirtableRecords(table);
+  const publishedRecords = records.filter((record) => {
+    const fields = record.fields || {};
+    const status = readField(fields, ["Status", "Publish Status"]);
+    return !status || ["Ready", "Published", "Live"].includes(String(status));
+  });
+
+  if (!publishedRecords.length) {
+    console.log("No Airtable startup records matched Ready/Published/Live. Building with local fallback data.");
+    return fallbackStartups;
+  }
+
+  const normalized = {};
+  for (const record of publishedRecords) {
+    const startup = normalizeStartup(record.fields || {});
+    normalized[startup.slug] = stripSlug(startup);
+  }
+
+  return normalized;
+}
+
+async function fetchAirtableRecords(table) {
+  const baseId = process.env.AIRTABLE_BASE_ID;
+  const encodedTable = encodeURIComponent(table);
+  const params = new URLSearchParams();
+  params.set("pageSize", "100");
+  if (process.env.AIRTABLE_VIEW) {
+    params.set("view", process.env.AIRTABLE_VIEW);
+  }
+
+  const records = [];
+  let offset = "";
+
+  do {
+    if (offset) params.set("offset", offset);
+    const url = `https://api.airtable.com/v0/${baseId}/${encodedTable}?${params}`;
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`
+      }
+    });
+
+    if (!response.ok) {
+      const message = await response.text();
+      throw new Error(`Airtable request failed: ${response.status} ${message}`);
+    }
+
+    const payload = await response.json();
+    records.push(...(payload.records || []));
+    offset = payload.offset || "";
+  } while (offset);
+
+  return records;
+}
+
+function normalizeStartup(fields) {
+  const name = readField(fields, ["Startup Name", "Name"]) || "Startup Name";
+  const slug = slugify(readField(fields, ["Slug"]) || name);
+  const team = parsePeople(readField(fields, ["Core Team", "Team"]));
+
+  return {
+    slug,
+    name,
+    tagline: readField(fields, ["Tagline", "One-line Description"]) || "",
+    logoText: readField(fields, ["Logo Text"]) || initials(name),
+    quickFacts: compactRows([
+      ["Founding Date", readField(fields, ["Founding Date"])],
+      ["Stage of Company / Product Stage", readField(fields, ["Stage of Company / Product Stage", "Stage"])],
+      ["Team Size", readField(fields, ["Team Size"])]
+    ]),
+    contact: compactRows([
+      ["Contact person", readField(fields, ["Contact person", "Contact Person"])],
+      ["Email", readField(fields, ["Email"])],
+      ["Website", readField(fields, ["Website"])]
+    ]),
+    sections: [
+      {
+        title: "Problem",
+        icon: "problem",
+        body: splitParagraphs(readField(fields, ["Problem"]))
+      },
+      {
+        title: "Solution",
+        icon: "solution",
+        body: splitParagraphs(readField(fields, ["Solution Intro", "Solution"])).slice(0, 1),
+        bullets: splitList(readField(fields, ["Solution Bullets"])),
+        afterBody: splitParagraphs(readField(fields, ["Solution After", "Solution Details"]))
+      },
+      {
+        title: "Core Team",
+        icon: "team",
+        people: team
+      },
+      {
+        title: "Market Opportunity",
+        icon: "market",
+        bullets: splitList(readField(fields, ["Market Opportunity", "Market"]))
+      },
+      {
+        title: "Competitors",
+        icon: "competitors",
+        bullets: splitList(readField(fields, ["Competitors"]))
+      },
+      {
+        title: "Business Model",
+        icon: "business",
+        body: splitParagraphs(readField(fields, ["Business Model Intro"])),
+        bullets: splitList(readField(fields, ["Target Customers", "Business Model Bullets"])),
+        afterBody: splitParagraphs(readField(fields, ["Business Model"]))
+      },
+      {
+        title: "Key Milestones",
+        icon: "milestones",
+        groupedBullets: [
+          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached"]))],
+          ["Planned", splitList(readField(fields, ["Milestones Planned", "Planned"]))]
+        ]
+      },
+      {
+        title: "Competitive Advantage",
+        icon: "advantage",
+        body: splitParagraphs(readField(fields, ["Competitive Advantage Intro", "Value Proposition Intro"])),
+        bullets: splitList(readField(fields, ["Competitive Advantage", "Value Proposition"]))
+      }
+    ],
+    supportNeed: {
+      label: readField(fields, ["Support Need Label"]) || "Support Need",
+      value: readField(fields, ["Support Need"]) || ""
+    },
+    incubatorLogo: readAttachmentUrl(fields, ["Incubator Logo"]) || "vhpi-logo.jpg"
+  };
+}
+
+function readField(fields, names) {
+  for (const name of names) {
+    const value = fields[name];
+    if (value !== undefined && value !== null && value !== "") return value;
+  }
+  return "";
+}
+
+function readAttachmentUrl(fields, names) {
+  const value = readField(fields, names);
+  if (Array.isArray(value) && value[0]?.url) return value[0].url;
+  if (typeof value === "string") return value;
+  return "";
+}
+
+function splitParagraphs(value) {
+  return String(value || "")
+    .split(/\n{2,}/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function splitList(value) {
+  if (Array.isArray(value)) return value.map(String).map((item) => item.trim()).filter(Boolean);
+  return String(value || "")
+    .split(/\n|;/)
+    .map((item) => item.replace(/^[-*•]\s*/, "").trim())
+    .filter(Boolean);
+}
+
+function parsePeople(value) {
+  if (Array.isArray(value)) return value.map(String).map((name) => [name, "", []]);
+
+  return String(value || "")
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [name = "", role = "", details = ""] = line.split("|").map((part) => part.trim());
+      return [name, role, splitList(details)];
+    });
+}
+
+function compactRows(rows) {
+  return rows.filter(([, value]) => value !== undefined && value !== null && value !== "");
+}
+
+function stripSlug(startup) {
+  const { slug, ...rest } = startup;
+  return rest;
+}
+
+function slugify(value) {
+  return String(value || "startup")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function initials(value) {
+  return String(value || "SN")
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+async function readCurrentStartups() {
+  const source = await readFile(join(publicDir, "data.js"), "utf8");
+  const context = { window: {} };
+  vm.runInNewContext(source, context);
+  return context.window.STARTUPS || {};
+}
+
+async function writeDataFile(data) {
+  const body = `window.STARTUPS = ${JSON.stringify(data, null, 2)};\n`;
+  await writeFile(join(publicDir, "data.js"), body);
+}
+
+async function syncRootStaticFiles(data) {
+  await writeStaticSite(rootDir, data);
+}
+
+async function syncDistFiles(data) {
+  await rm(distDir, { recursive: true, force: true });
+  await mkdir(distDir, { recursive: true });
+  await writeStaticSite(distDir, data);
+}
+
+async function writeStaticSite(targetDir, data) {
+  await copyFile(join(publicDir, "index.html"), join(targetDir, "index.html"));
+  await copyFile(join(publicDir, "index.html"), join(targetDir, "404.html"));
+  await copyFile(join(publicDir, "styles.css"), join(targetDir, "styles.css"));
+  await copyFile(join(publicDir, "data.js"), join(targetDir, "data.js"));
+  await copyFile(join(publicDir, "vhpi-logo.jpg"), join(targetDir, "vhpi-logo.jpg"));
+
+  for (const slug of Object.keys(data)) routeSlugs.add(slug);
+
+  for (const slug of routeSlugs) {
+    const route = join(targetDir, slug);
+    const printRoute = join(route, "print");
+    await mkdir(printRoute, { recursive: true });
+    await copyFile(join(publicDir, "index.html"), join(route, "index.html"));
+    await copyFile(join(publicDir, "index.html"), join(printRoute, "index.html"));
+  }
+}
+
+async function writeIntakeSchema() {
+  const schema = {
+    fields: {
+      "Startup Name": { min: 2, max: 35 },
+      Tagline: { min: 40, max: 120 },
+      Problem: { min: 450, max: 750 },
+      "Solution Intro": { min: 20, max: 120 },
+      "Solution Bullets": { minItems: 2, maxItems: 4 },
+      "Solution After": { min: 180, max: 420 },
+      "Core Team": { format: "Name | Role | bullet 1; bullet 2", minItems: 1, maxItems: 5 },
+      "Market Opportunity": { minItems: 2, maxItems: 4 },
+      Competitors: { minItems: 2, maxItems: 4 },
+      "Business Model": { min: 300, max: 600 },
+      "Milestones Reached": { minItems: 3, maxItems: 7 },
+      "Milestones Planned": { minItems: 2, maxItems: 5 },
+      "Competitive Advantage": { minItems: 3, maxItems: 5 },
+      "Support Need": { min: 20, max: 90 }
+    }
+  };
+
+  await writeFile(join(rootDir, "airtable-intake-schema.json"), `${JSON.stringify(schema, null, 2)}\n`);
+}
+
+function loadEnvFile(filename) {
+  const path = join(rootDir, filename);
+  if (!existsSync(path)) return;
+  const lines = readFileSyncSafe(path).split(/\r?\n/);
+  for (const line of lines) {
+    const match = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (!match) continue;
+    const [, key, rawValue] = match;
+    if (process.env[key]) continue;
+    process.env[key] = rawValue.replace(/^["']|["']$/g, "");
+  }
+}
+
+function readFileSyncSafe(path) {
+  return existsSync(path) ? readFileSync(path, "utf8") : "";
+}

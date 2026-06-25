@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "node server.mjs"
+    "dev": "node server.mjs",
+    "build": "node scripts/build-site.mjs"
   },
   "private": true,
   "type": "module"
