@@ -122,7 +122,7 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
         title: "Solution",
         icon: "solution",
         body: splitParagraphs(readField(fields, ["Solution Intro", "Solution"])).slice(0, 1),
-        bullets: splitList(readField(fields, ["Solution Bullets"])),
+        bullets: splitExplicitList(readField(fields, ["Solution Bullets"])),
         afterBody: splitParagraphs(readField(fields, ["Solution After", "Solution Details"]))
       },
       {
@@ -134,12 +134,13 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
         title: "Market Opportunity",
         icon: "market",
         body: splitParagraphs(readField(fields, ["Market Opportunity", "Market Oportunity", "Market", "Market Size"])),
-        bullets: splitList(readField(fields, ["Market Opportunity Bullets"]))
+        bullets: splitExplicitList(readField(fields, ["Market Opportunity Bullets"]))
       },
       {
         title: "Competitors",
         icon: "competitors",
-        bullets: splitList(readField(fields, ["Competitors", "Competitor", "Competidor", "Competiros"]))
+        body: splitTextUnlessExplicitList(readField(fields, ["Competitors", "Competitor", "Competidor", "Competiros"])),
+        bullets: splitExplicitList(readField(fields, ["Competitors", "Competitor", "Competidor", "Competiros"]))
       },
       {
         title: "Business Model",
@@ -150,15 +151,15 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
           ...splitParagraphs(readField(fields, ["Business Model"])),
           ...withLabel("Go-to-Market", readField(fields, ["Go-to-Market", "Go To Market"]))
         ],
-        bullets: splitList(readField(fields, ["Business Model Bullets"]))
+        bullets: splitExplicitList(readField(fields, ["Business Model Bullets"]))
       },
       {
         title: "Key Milestones",
         icon: "milestones",
         body: splitParagraphs(readField(fields, ["Key Milestones"])),
         groupedBullets: readField(fields, ["Key Milestones"]) ? [] : [
-          ["Reached", splitList(readField(fields, ["Milestones Reached", "Reached"]))],
-          ["Planned", splitList(readField(fields, ["Milestones Planned", "Planned"]))]
+          ["Reached", splitExplicitList(readField(fields, ["Milestones Reached", "Reached"]))],
+          ["Planned", splitExplicitList(readField(fields, ["Milestones Planned", "Planned"]))]
         ]
       },
       {
@@ -170,7 +171,7 @@ function normalizeStartup(fields, foundersById = new Map(), contactsById = new M
           ...withLabel("Value proposition", readField(fields, ["Value Proposition"])),
           ...withLabel("Tackling", readField(fields, ["Tackling"]))
         ],
-        bullets: splitList(readField(fields, ["Competitive Advantage Bullets"])
+        bullets: splitExplicitList(readField(fields, ["Competitive Advantage Bullets"])
           || readField(fields, ["Value Proposition Bullets"]))
       }
     ],
@@ -261,6 +262,20 @@ function splitList(value) {
     .filter(Boolean);
 }
 
+function splitExplicitList(value) {
+  if (Array.isArray(value)) return value.map(String).map((item) => item.trim()).filter(Boolean);
+  return String(value || "")
+    .split(/\n+/)
+    .map((item) => item.trim())
+    .filter((item) => /^([-*•]\s+|\d+[.)]\s+)/.test(item))
+    .map((item) => item.replace(/^([-*•]\s+|\d+[.)]\s+)/, "").trim())
+    .filter(Boolean);
+}
+
+function splitTextUnlessExplicitList(value) {
+  return splitExplicitList(value).length ? [] : splitParagraphs(value);
+}
+
 function parseLabeledRows(value) {
   return splitList(value).map((line) => {
     const match = line.match(/^([^:–-]{2,40})[:–-]\s*(.+)$/);
@@ -278,7 +293,7 @@ function parsePeople(value) {
     .filter(Boolean)
     .map((line) => {
       const [name = "", role = "", details = "", link = ""] = line.split("|").map((part) => part.trim());
-      return [name, role, splitList(details), link];
+      return [name, role, splitExplicitList(details), link];
     });
 }
 

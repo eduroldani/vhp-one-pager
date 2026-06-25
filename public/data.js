@@ -69,9 +69,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Calm, Headspace, 7Mind, Wysa, HelloBetter, Selfapy, Flo, Clue, therapy and coaching."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -171,9 +172,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "N8N, Microsoft Copilot Studio, Limbic, Slingshot AI, custom development agencies."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -279,9 +281,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Infermedica, Abridge, Navina, Binah.ai, iMedOne, Nexus AG."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -387,9 +390,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "ChatGPT Health, HelloBetter, Selfapy, Mindable, Ello, Aury Care, Slingshot AI."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -495,9 +499,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Kaia Health, Caspar Health, Physiofit, Vivira, printed exercise programs."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -603,9 +608,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Aaron.ai, Praxipal, Praxisconcierge, CGM, call centers, IVR systems."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -711,9 +717,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Human Health, WellTheory, Paloma Health, Ada Health, MyTherapy, Carrot Care."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
@@ -819,9 +826,10 @@ window.STARTUPS = {
       {
         "title": "Competitors",
         "icon": "competitors",
-        "bullets": [
+        "body": [
           "Juzo, Curaflow, Lipocheck, Doctolib, generic wellness apps, paper based systems, and telemonitoring platforms."
-        ]
+        ],
+        "bullets": []
       },
       {
         "title": "Business Model",
